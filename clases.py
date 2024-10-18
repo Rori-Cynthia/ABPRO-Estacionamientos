@@ -55,6 +55,13 @@ class Recibo():
     def __str__(self):
         return f"Recibo:\n{str(self.vehiculo)}\nTiempo: {self.tiempo} horas\nTotal a pagar: ${self.total}"
 
+
+class ControlDeTiempo(Automovil, Motocicleta):
+    def validar_tiempo(tiempo_permanencia: int):
+        if tiempo_permanencia <= 0:
+            raise TiempoInvalidoError()
+
+
 try:
     # Crear instancia de Automóvil
     auto = Automovil(placa="ABC123", marca="Toyota", tarifa_por_hora=2)
